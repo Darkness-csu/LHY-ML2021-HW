@@ -512,13 +512,13 @@ Finished training after 699 epochs
 plot_learning_curve(model_loss_record, title='deep model')
 ```
 
-![batsize_200](/Users/william/Desktop/Python项目文件/2021李宏毅ML/Lhy_Machine_Learning-main/01 Introduction/作业HW1/images/learningcurve-1.png)
+![batsize_200](./images/learningcurve-1.png)
 
 <div align = "center"><b>batch_size_200</b></div>
 
 
 
-![batsize_300](/Users/william/Desktop/Python项目文件/2021李宏毅ML/Lhy_Machine_Learning-main/01 Introduction/作业HW1/images/learningcurve-2.png)
+![batsize_300](./images/learningcurve-2.png)
 
 <div align = "center"><b>batch_size_300</b></div>
 
@@ -530,13 +530,13 @@ model.load_state_dict(ckpt)
 plot_pred(dv_set, model, device)  # Show prediction on the validation set
 ```
 
-![GTvsP-200](/Users/william/Desktop/Python项目文件/2021李宏毅ML/Lhy_Machine_Learning-main/01 Introduction/作业HW1/images/GTvsP-200.png)
+![GTvsP-200](./images/GTvsP-200.png)
 
 <div align = "center"><b>batch_size_200</b></div>
 
 
 
-![GTvsP-300](/Users/william/Desktop/Python项目文件/2021李宏毅ML/Lhy_Machine_Learning-main/01 Introduction/作业HW1/images/GTvsP-300.png)
+![GTvsP-300](./images/GTvsP-300.png)
 
 <div align = "center"><b>batch_size_300</b></div>
 
