@@ -336,10 +336,10 @@ target_only = True                   # TODO: Using 40 states & 2 tested_positive
 # TODO: How to tune these hyper-parameters to improve your model's performance?
 config = {
     'n_epochs': 5000,                # maximum number of epochs
-    'batch_size': 200,#300           # mini-batch size for dataloader
+    'batch_size': 200,#300 100       # mini-batch size for dataloader
     'optimizer': 'SGD',              # optimization algorithm (optimizer in torch.optim)
     'optim_hparas': {                # hyper-parameters for the optimizer (depends on which optimizer you are using)
-        'lr': 0.001,                 # learning rate of SGD
+        'lr': 0.001,#0.0005          # learning rate of SGD
         'momentum': 0.9              # momentum for SGD
     },
     'early_stop': 200,               # early stopping epochs (the number epochs since your model's last improvement)
@@ -353,7 +353,7 @@ config = {
 model_loss, model_loss_record = train(tr_set, dv_set, model, config, device)
 ```
 
-* 当batch_size设置为==200==时，训练结果如下
+* 当batch_size设置为==200==，lr为0.001时，训练结果如下
 
 ```markdown
 Saving model (epoch =    1, loss = 47.4422)
@@ -421,7 +421,7 @@ Saving model (epoch =  419, loss = 0.7609)
 Finished training after 620 epochs
 ```
 
-* 当batch_size设置为==300==的时候，训练结果如下
+* 当batch_size设置为==300==，lr为0.001的时候，训练结果如下
 
 ```markdown
 Saving model (epoch =    1, loss = 160.3957)
@@ -508,19 +508,112 @@ Saving model (epoch =  498, loss = 0.7426)
 Finished training after 699 epochs
 ```
 
+* 当batch_size为100，lr为0.0005时，训练结果如下
+
+```markdown
+Saving model (epoch =    1, loss = 44.0982)
+Saving model (epoch =    2, loss = 14.1045)
+Saving model (epoch =    3, loss = 8.9617)
+Saving model (epoch =    4, loss = 6.4622)
+Saving model (epoch =    5, loss = 4.9410)
+Saving model (epoch =    6, loss = 4.0617)
+Saving model (epoch =    7, loss = 3.5047)
+Saving model (epoch =    8, loss = 3.0944)
+Saving model (epoch =    9, loss = 2.7790)
+Saving model (epoch =   10, loss = 2.4750)
+Saving model (epoch =   11, loss = 2.2492)
+Saving model (epoch =   12, loss = 2.0575)
+Saving model (epoch =   13, loss = 1.8772)
+Saving model (epoch =   14, loss = 1.7276)
+Saving model (epoch =   15, loss = 1.6098)
+Saving model (epoch =   16, loss = 1.5516)
+Saving model (epoch =   17, loss = 1.5068)
+Saving model (epoch =   18, loss = 1.4018)
+Saving model (epoch =   19, loss = 1.3558)
+Saving model (epoch =   20, loss = 1.3277)
+Saving model (epoch =   21, loss = 1.3226)
+Saving model (epoch =   22, loss = 1.2674)
+Saving model (epoch =   23, loss = 1.2095)
+Saving model (epoch =   25, loss = 1.1844)
+Saving model (epoch =   27, loss = 1.1549)
+Saving model (epoch =   28, loss = 1.1118)
+Saving model (epoch =   32, loss = 1.0917)
+Saving model (epoch =   33, loss = 1.0789)
+Saving model (epoch =   35, loss = 1.0409)
+Saving model (epoch =   36, loss = 1.0271)
+Saving model (epoch =   39, loss = 0.9770)
+Saving model (epoch =   42, loss = 0.9750)
+Saving model (epoch =   44, loss = 0.9742)
+Saving model (epoch =   45, loss = 0.9698)
+Saving model (epoch =   49, loss = 0.9678)
+Saving model (epoch =   50, loss = 0.9637)
+Saving model (epoch =   51, loss = 0.9585)
+Saving model (epoch =   52, loss = 0.9340)
+Saving model (epoch =   54, loss = 0.9187)
+Saving model (epoch =   57, loss = 0.9028)
+Saving model (epoch =   59, loss = 0.9015)
+Saving model (epoch =   61, loss = 0.8915)
+Saving model (epoch =   63, loss = 0.8898)
+Saving model (epoch =   65, loss = 0.8858)
+Saving model (epoch =   68, loss = 0.8728)
+Saving model (epoch =   71, loss = 0.8616)
+Saving model (epoch =   74, loss = 0.8582)
+Saving model (epoch =   76, loss = 0.8482)
+Saving model (epoch =   87, loss = 0.8230)
+Saving model (epoch =  100, loss = 0.8221)
+Saving model (epoch =  102, loss = 0.8205)
+Saving model (epoch =  107, loss = 0.8191)
+Saving model (epoch =  114, loss = 0.7942)
+Saving model (epoch =  132, loss = 0.7929)
+Saving model (epoch =  133, loss = 0.7902)
+Saving model (epoch =  145, loss = 0.7873)
+Saving model (epoch =  146, loss = 0.7832)
+Saving model (epoch =  148, loss = 0.7800)
+Saving model (epoch =  151, loss = 0.7779)
+Saving model (epoch =  220, loss = 0.7696)
+Saving model (epoch =  233, loss = 0.7674)
+Saving model (epoch =  237, loss = 0.7664)
+Saving model (epoch =  330, loss = 0.7661)
+Saving model (epoch =  349, loss = 0.7646)
+Saving model (epoch =  354, loss = 0.7630)
+Saving model (epoch =  436, loss = 0.7562)
+Saving model (epoch =  446, loss = 0.7468)
+Saving model (epoch =  542, loss = 0.7420)
+Saving model (epoch =  599, loss = 0.7414)
+Saving model (epoch =  718, loss = 0.7383)
+Saving model (epoch =  793, loss = 0.7332)
+Saving model (epoch =  925, loss = 0.7312)
+Saving model (epoch = 1056, loss = 0.7300)
+Saving model (epoch = 1148, loss = 0.7294)
+Saving model (epoch = 1165, loss = 0.7274)
+Saving model (epoch = 1182, loss = 0.7265)
+Saving model (epoch = 1283, loss = 0.7201)
+Saving model (epoch = 1390, loss = 0.7193)
+Saving model (epoch = 1459, loss = 0.7131)
+Saving model (epoch = 1490, loss = 0.7104)
+Saving model (epoch = 1547, loss = 0.7052)
+Saving model (epoch = 1578, loss = 0.7047)
+Saving model (epoch = 1669, loss = 0.6998)
+Finished training after 1870 epochs
+```
+
 ```python
 plot_learning_curve(model_loss_record, title='deep model')
 ```
 
 ![batsize_200](./images/learningcurve-1.png)
 
-<div align = "center"><b>batch_size_200</b></div>
+<div align = "center"><b>batch_size_200,lr_0.001</b></div>
 
 
 
 ![batsize_300](./images/learningcurve-2.png)
 
-<div align = "center"><b>batch_size_300</b></div>
+<div align = "center"><b>batch_size_300,lr_0.001</b></div>
+
+![batchsize_100](./images/learningcurve-3.png)
+
+<div align = "center"><b>batch_size_100,lr_0.0005</b></div>
 
 ```python
 del model
@@ -532,15 +625,21 @@ plot_pred(dv_set, model, device)  # Show prediction on the validation set
 
 ![GTvsP-200](./images/GTvsP-200.png)
 
-<div align = "center"><b>batch_size_200</b></div>
+<div align = "center"><b>batch_size_200,lr_0.001</b></div>
 
 
 
 ![GTvsP-300](./images/GTvsP-300.png)
 
-<div align = "center"><b>batch_size_300</b></div>
+<div align = "center"><b>batch_size_300,lr_0.001</b></div>
 
-> 当batchsize在一定范围内增大后，训练的强度增加了，迭代次数增加，最终得到的模型在此训练样本上具有更小的loss。
+![GTvsP-100](./images/GTvsP-100.png)
+
+<div align = "center"><b>batch_size_100,lr_0.0005</b></div>
+
+> 对比前两个模型，两者学习率相同，batsize_300的模型最终得到的loss要比200小，然而当batch_size为100时候，loss却也要比两者低，为0.7227（710 epochs），同时若将学习率再降低的话，loss还能降到0.6998.
+>
+> 对于此模型，可能batchsize大小设置在100-200之间可能会比较好，尽管可能更大（>300）的batchsize也能达到同样的loss，但是大的batchsize往往会带来一些其他的问题。
 
 ### Testing
 
